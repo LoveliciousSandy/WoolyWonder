@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2018 10:15:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Chat" table="chat" catalog="wooly_wonder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="accountByFromaccount" class="Pojos.Account" fetch="select">
+            <column name="fromaccount" not-null="true" />
+        </many-to-one>
+        <many-to-one name="accountByToaccount" class="Pojos.Account" fetch="select">
+            <column name="toaccount" not-null="true" />
+        </many-to-one>
+        <property name="message" type="string">
+            <column name="message" length="45" />
+        </property>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>
