@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2018 10:15:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Product" table="product" catalog="wooly_wonder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="productCategory" class="Pojos.ProductCategory" fetch="select">
+            <column name="category" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productColour" class="Pojos.ProductColour" fetch="select">
+            <column name="colour" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productRequest" class="Pojos.ProductRequest" fetch="select">
+            <column name="request" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productSize" class="Pojos.ProductSize" fetch="select">
+            <column name="size" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productSubcategory" class="Pojos.ProductSubcategory" fetch="select">
+            <column name="subcategory" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="shipping" type="java.lang.Double">
+            <column name="shipping" precision="22" scale="0" />
+        </property>
+        <property name="qty" type="java.lang.Integer">
+            <column name="qty" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <set name="bags" table="bag" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Bag" />
+        </set>
+        <set name="orderDetailses" table="order_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.OrderDetails" />
+        </set>
+        <set name="productImages" table="product_image" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.ProductImage" />
+        </set>
+        <set name="requests" table="request" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Request" />
+        </set>
+    </class>
+</hibernate-mapping>

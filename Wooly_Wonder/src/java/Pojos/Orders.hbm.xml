@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2018 10:15:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Orders" table="orders" catalog="wooly_wonder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="account" class="Pojos.Account" fetch="select">
+            <column name="account" not-null="true" />
+        </many-to-one>
+        <many-to-one name="address" class="Pojos.Address" fetch="select">
+            <column name="toaddress" not-null="true" />
+        </many-to-one>
+        <property name="shipping" type="java.lang.Double">
+            <column name="shipping" precision="22" scale="0" />
+        </property>
+        <property name="total" type="java.lang.Double">
+            <column name="total" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="datetime" type="timestamp">
+            <column name="datetime" length="19" />
+        </property>
+        <set name="orderDetailses" table="order_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="orders" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.OrderDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

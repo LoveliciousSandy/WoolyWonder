@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onchange event</title>
+</head>
+<body>
+
+
+<script src="jscolor.js"></script>
+
+<p>'onchange' fires after the mouse button is released
+
+<p>Rectangle color:
+<input class="jscolor" onchange="update(this.jscolor)" value="cc66ff">
+
+<p id="rect" style="border:1px solid gray; width:161px; height:100px;">
+
+<script>
+function update(jscolor) {
+    // 'jscolor' instance can be used as a string
+    document.getElementById('rect').style.backgroundColor = '#' + jscolor
+}
+</script>
+
+
+<p style="margin-top:3em;">Check out <a href="http://jscolor.com/examples/">more examples at jscolor.com</a>!</p>
+
+
+</body>
+</html>

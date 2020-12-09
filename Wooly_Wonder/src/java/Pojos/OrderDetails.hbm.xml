@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2018 10:15:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.OrderDetails" table="order_details" catalog="wooly_wonder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orders" class="Pojos.Orders" fetch="select">
+            <column name="orders" not-null="true" />
+        </many-to-one>
+        <many-to-one name="paymentReceived" class="Pojos.PaymentReceived" fetch="select">
+            <column name="payment_received" not-null="true" />
+        </many-to-one>
+        <many-to-one name="product" class="Pojos.Product" fetch="select">
+            <column name="product" not-null="true" />
+        </many-to-one>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="confirmedDt" type="timestamp">
+            <column name="confirmedDT" length="19" />
+        </property>
+        <property name="shippedDt" type="timestamp">
+            <column name="shippedDT" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

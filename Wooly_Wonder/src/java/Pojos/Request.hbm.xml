@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2018 10:15:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Request" table="request" catalog="wooly_wonder" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="account" class="Pojos.Account" fetch="select">
+            <column name="account" not-null="true" />
+        </many-to-one>
+        <many-to-one name="product" class="Pojos.Product" fetch="select">
+            <column name="product" not-null="true" />
+        </many-to-one>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="colour" type="string">
+            <column name="colour" length="45" />
+        </property>
+        <property name="size" type="string">
+            <column name="size" length="45" />
+        </property>
+        <property name="dateTime" type="timestamp">
+            <column name="dateTime" length="19" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45">
+                <comment>1 = new order 2 = price to be confirmed 3 = crocheting 4 = completed 5 = shipped 6 = delivered</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

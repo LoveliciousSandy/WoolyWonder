@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Pojos/Product.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Servlet/product/productmanage.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Cart/SessionBag.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/web/Login_Signup/Login.jsp</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Order/orderSave.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Servlet/product/load_product.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Model/Product/ProductModel.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Cart/DBBag.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Model/Product/MultipartFormReader.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/web/mybag.jsp</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/web/cart.checkout.jsp</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/web/customorder.jsp</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/src/java/Pojos/Chat.java</file>
+            <file>file:/D:/NotitiaZone/Wooly_Wonder/web/index.jsp</file>
+        </group>
+    </open-files>
+</project-private>
